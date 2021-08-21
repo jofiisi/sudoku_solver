@@ -22,6 +22,10 @@ class cell {
     setVal(val) {
         this.val = val;
     }
+    
+    getVal() {
+        return this.val;
+    }
 
     setPVal(pVal) {
         this.pVal.push(pVal);
@@ -32,12 +36,24 @@ class cell {
     }
 }
 var cX = new Array(81);
-for(let i = 1; i < 82; i++)
+for(let i = 0; i < 81; i++)
 {
     cX[i] = new cell(i);
-    cX[i].setVal(pattern[i-1]);
+    cX[i].setVal(pattern[i]);
 }
-cX[3].setPVal(1);
-cX[3].setPVal(2);
-console.log(cX[3].getPVal(1));
-console.log(cX[3].getPVal(0));
+for(let i = 0; i < 81; i=i+3)
+{
+   /* if(cX[i].getVal() == 0)
+    {
+        if(cX[i+1].getVal() != 0) cX[i].setPVal(cX[i+1].getVal());
+        if(cX[i+2].getVal() != 0) cX[i].setPVal(cX[i+2].getVal());
+        if(cX[i+9].getVal() != 0) cX[i].setPVal(cX[i+9].getVal());
+        if(cX[i+10].getVal() != 0) cX[i].setPVal(cX[i+10].getVal());
+        if(cX[i+11].getVal() != 0) cX[i].setPVal(cX[i+11].getVal());
+        if(cX[i+18].getVal() != 0) cX[i].setPVal(cX[i+18].getVal());
+        if(cX[i+19].getVal() != 0) cX[i].setPVal(cX[i+19].getVal());
+        if(cX[i+20].getVal() != 0) cX[i].setPVal(cX[i+20].getVal());
+    }*/
+}
+//console.log(cX[0]);
+console.log(cX[20].getVal);
