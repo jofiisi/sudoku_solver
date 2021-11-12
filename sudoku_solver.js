@@ -26,7 +26,6 @@ function row2index(row, col)
 
 function sCell(index, value) {
     let {row, col} = index2row(index);
-    if()
     for(let x = 0; x < 9; x++)
     {
         if(patternS[row2index(x, col) == value]);
