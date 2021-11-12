@@ -12,48 +12,39 @@ var pattern = [
     0,0,0, 0,0,0, 0,7,0
 ];
 
-class cell {
-    constructor(pos)
-    {
-        this.pos = pos;
-        this.pVal = [];
-    }
+var patternS = pattern;
 
-    setVal(val) {
-        this.val = val;
+function index2row(index) 
+{
+    return{row: Math.floor(index / 9), col: index % 9};
+}
+
+function row2index(row, col) 
+{
+    return row * 9 + col;    
+}
+
+function sCell(index, value) {
+    let {row, col} = index2row(index);
+    if()
+    for(let x = 0; x < 9; x++)
+    {
+        if(patternS[row2index(x, col) == value]);
+    }
+    for(let x = 0; x < 9; x++)
+    {
+        if(patternS[row2index(row, x) == value]);
+    }
+    let threeR = Math.floor(row/3) * 3;
+    let threeC = Math.floor(col/3) * 3;
+    for(let a = 0; a < 3; a++)
+    {
+        for(let b = 0; b < 3; b++)
+        {
+            if(patternS[row2index(a ,b)] == value);
+        }
     }
     
-    getVal() {
-        return this.val;
-    }
+}
 
-    setPVal(pVal) {
-        this.pVal.push(pVal);
-    }
-    
-    getPVal(x) {
-        return this.pVal[x];
-    }
-}
-var cX = new Array(81);
-for(let i = 0; i < 81; i++)
-{
-    cX[i] = new cell(i);
-    cX[i].setVal(pattern[i]);
-}
-for(let i = 0; i < 81; i=i+3)
-{
-   /* if(cX[i].getVal() == 0)
-    {
-        if(cX[i+1].getVal() != 0) cX[i].setPVal(cX[i+1].getVal());
-        if(cX[i+2].getVal() != 0) cX[i].setPVal(cX[i+2].getVal());
-        if(cX[i+9].getVal() != 0) cX[i].setPVal(cX[i+9].getVal());
-        if(cX[i+10].getVal() != 0) cX[i].setPVal(cX[i+10].getVal());
-        if(cX[i+11].getVal() != 0) cX[i].setPVal(cX[i+11].getVal());
-        if(cX[i+18].getVal() != 0) cX[i].setPVal(cX[i+18].getVal());
-        if(cX[i+19].getVal() != 0) cX[i].setPVal(cX[i+19].getVal());
-        if(cX[i+20].getVal() != 0) cX[i].setPVal(cX[i+20].getVal());
-    }*/
-}
-//console.log(cX[0]);
-console.log(cX[20].getVal);
+console.log(sCell(70,6));
